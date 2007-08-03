@@ -14,11 +14,11 @@ DJabberd::Plugin::EntityTime - Implements XEP-0090 and XEP-0202
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
@@ -80,7 +80,7 @@ sub _get_time202 {
     $logger->info('Getting time from : '.$iq->from_jid);
     my $zone = strftime("%z",gmtime);
     $zone =~ s/(\d\d)(\d\d)$/$1:$2/;
-    $iq->send_reply('result',qq(<time xmlns="jabber:iq:time">)
+    $iq->send_reply('result',qq(<time xmlns="urn:xmpp:time">)
 	.'<tzo>'.$zone.'</tzo>'
 	.'<utc>'.strftime("%Y%m%dT%H:%M:%S",gmtime).'</utc>'
 	.qq(</time>) );

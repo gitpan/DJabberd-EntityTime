@@ -1,5 +1,8 @@
 Revision history for DJabberd-Plugin-EntityTime
 
+0.02	2007-08-03
+	Fixed xmlns on XEP-0202 response
+
 0.01    2007-08-03
         First version, released on an unsuspecting world.
 
